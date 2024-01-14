@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to System</title>
+    <style>
+        body {
+            font-family: 'Arial, Helvetica, sans-serif';
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #1a1a1a;
+        }
+        header {
+            background-color: #fff; /* Change header background color to white */
+            color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        header a{
+            color: #1a1a1a;
+            background-color: #8c6d50;
+            padding: 10px;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        header img {
+            position: absolute;
+            top: 0px; /* Adjust the top position as needed */
+            left: 0px; /* Adjust the left position as needed */
+            width: 200px; /* Adjust the width as needed */
+            height: auto;
+        }
+
+        h1 {
+            font-size: 81px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .login-container {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        table {
+            display: inline;
+            margin: 0 auto;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Logo">
+        <a href="/">
+            <h1>Grind & Co.</h1>
+        </a>
+    </header>
+
+    <div class="login-container">
+        <h3>Please Login to System</h3>
+
+        {{#if loginMessage}}
+            <p>{{loginMessage}}</p>
+        {{/if}}
+
+        <form name="MyForm" method="post" action="/validateLogin">
+            <table>
+                <tr>
+                    <td>
+                        <label for="username">Username:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="username" id="username" size="10" maxlength="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="password" id="password" size="10" maxlength="10">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input class="submit" type="submit" name="Submit2" value="Log In">
+        </form>
+        <p>Don't have an account? <a href="/createCust">Create a new account</a></p>
+    </div>
+</body>
+</html>
